@@ -20,7 +20,6 @@ public class MyChannelInterceptorAdapter extends ImmutableMessageChannelIntercep
 
     @Override
     public Message<?> preSend(Message<?> message, MessageChannel channel) {
-        //
         System.out.println(this.getClass().getCanonicalName() + " preSend");
         StompHeaderAccessor accessor = StompHeaderAccessor.wrap(message);
         StompCommand command = accessor.getCommand();
