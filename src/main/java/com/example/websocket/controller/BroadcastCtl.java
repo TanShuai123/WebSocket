@@ -44,14 +44,14 @@ public class BroadcastCtl {
         return responseMessage;
     }
 
-   @SubscribeMapping("/subscribe")
+   /*@SubscribeMapping("/subscribe")
     public ResponseMessage subscribe() {
         //订阅提示消息
         logger.info("XXX用户订阅了我。。。");
         ResponseMessage responseMessage = new ResponseMessage();
         responseMessage.setResponseMessage("感谢你的订阅");
         return responseMessage;
-    }
+    }*/
 
     @RequestMapping(value = "/broadcast/index")
     public String broadcastIndex(HttpServletRequest request) {
