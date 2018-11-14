@@ -14,11 +14,13 @@ import org.springframework.stereotype.Component;
 @Component
 @Slf4j
 public class MyChannelInterceptorAdapter extends ImmutableMessageChannelInterceptor {
+
     @Autowired
     private SimpMessagingTemplate simpMessagingTemplate;
 
     @Override
     public Message<?> preSend(Message<?> message, MessageChannel channel) {
+        //
         System.out.println(this.getClass().getCanonicalName() + " preSend");
         StompHeaderAccessor accessor = StompHeaderAccessor.wrap(message);
         StompCommand command = accessor.getCommand();
